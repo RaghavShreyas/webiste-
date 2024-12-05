@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorful Website with PowerPoint Display</title>
+    <style>
+      /* Overall Body Style */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: white;
+        background-color: #121212;
+        overflow-x: hidden;
+        height: 100vh;
+      }
+
+      /* Header Style */
+      header {
+        background-color: #0077b6;
+        padding: 40px 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+      }
+
+      /* Moving Background */
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://www.w3schools.com/w3images/forestbridge.jpg")
+          no-repeat center center fixed;
+        background-size: cover;
+        animation: moveBackground 20s linear infinite;
+        z-index: -1;
+      }
+
+      @keyframes moveBackground {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 100% 100%;
+        }
+      }
+
+      /* Container */
+      .container {
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* PowerPoint Display Section */
+      .ppt-display {
+        margin: 30px 0;
+        text-align: center;
+      }
+
+      .ppt-display iframe {
+        width: 80%;
+        height: 600px;
+        border: none;
+        border-radius: 8px;
+      }
+
+      /* Rating Section */
+      .rating-section {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .rating-section select {
+        font-size: 18px;
+        padding: 10px;
+        margin: 20px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .submit-button {
+        background-color: #4caf50;
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .submit-button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Elite Executives</h1>
+      <h2>Group 2</h2>
+    </header>
+
+    <div class="container">
+      <!-- Display PPT -->
+      <div class="ppt-display" id="ppt-display">
+        <!-- Embed PowerPoint (Example from OneDrive/Google Slides or other platforms) -->
+        <iframe
+          src="https://docs.google.com/presentation/d/1d565sDuHKFWgPG-HEFaALx8_xYO5d7wjtWhNw_mRs4M/edit?usp=sharing"
+          width="80%"
+          height="600px"
+          frameborder="0"
+        >
+        </iframe>
+      </div>
+
+      <!-- Rating Section -->
+      <div class="rating-section">
+        <h3>Rate the PowerPoint Presentation</h3>
+        <select id="ppt-rating">
+          <option value="1">1 - Poor</option>
+          <option value="2">2 - Fair</option>
+          <option value="3">3 - Good</option>
+          <option value="4">4 - Very Good</option>
+          <option value="5">5 - Excellent</option>
+        </select>
+        <button class="submit-button" onclick="submitRating()">
+          Submit Rating
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Function to handle rating submission
+      function submitRating() {
+        const rating = document.getElementById("ppt-rating").value;
+        alert(`Thank you for rating! You gave a rating of: ${rating}`);
+      }
+    </script>
+  </body>
+</html>
